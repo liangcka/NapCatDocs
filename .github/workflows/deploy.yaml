@@ -39,6 +39,7 @@ jobs:
       - name: Build
         env:
           NODE_OPTIONS: '--max-old-space-size=8192'
+          DOCS_BASE: /NapCatDocs/
         run: pnpm docs:build
 
       - name: Setup Pages

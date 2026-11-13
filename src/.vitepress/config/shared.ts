@@ -10,6 +10,9 @@ import {
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import taskLists from 'markdown-it-task-lists'
 import { defineConfig } from 'vitepress'
+
+// Matches the `base` in config/index.ts; head links are not prefixed by VitePress automatically.
+const LOGO_HREF = `${process.env.DOCS_BASE || '/'}assets/newnewlogo.png`
 import timeline from 'vitepress-markdown-timeline'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
@@ -82,12 +85,12 @@ export const shared = defineConfig({
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: '/assets/newnewlogo.png'
+        href: LOGO_HREF
       }
     ],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/newnewlogo.png' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/assets/newnewlogo.png' }],
-    ['link', { rel: 'mask-icon', href: '/assets/newnewlogo.png', color: '#5bbad5' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: LOGO_HREF }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: LOGO_HREF }],
+    ['link', { rel: 'mask-icon', href: LOGO_HREF, color: '#5bbad5' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
   ],
 
